@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>查询该学生本次不同类型的单词集:</h3>
+    <h4>连接数据库：</h4>
+    <form action="/mvp/" method="post">
+        {%  csrf_token %}
+        host:<input type="text" name="host"><br/>
+        port:<input type="text" name="port"><br/>
+        db:<input type="text" name="db"><br/>
+        用户名：<input type="text" name="username"><br/>
+        密码：<input type="password" name="password"><br/>
+        <input type="submit" value="连接">
+    </form>
+    <h3>用户展示：</h3>
+    <table border="1">
+        <thead>
+            <tr>分类</tr>
+            <tr>单词集</tr>
+        </thead>
+        <tbody>
+            {% for item in words_list %}
+                <tr>
+                    <td>{{  }}</td>
+                    <td>{{ item.pwd }}</td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</body>
+</html>
